@@ -1,0 +1,33 @@
+{
+  "name": "level-cache",
+  "version": "1.0.0",
+  "description": "Caching tools backed by leveldb",
+  "main": "level-cache.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beaugunderson/node-level-cache.git"
+  },
+  "author": "Beau Gunderson <beau@beaugunderson.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/beaugunderson/node-level-cache/issues"
+  },
+  "homepage": "https://github.com/beaugunderson/node-level-cache",
+  "dependencies": {
+    "async": "^0.9.0",
+    "bytewise": "^0.7.1",
+    "leveldown": "^0.10.2",
+    "levelup": "^0.19.0",
+    "lodash": "^2.4.1",
+    "monotonic-timestamp": "0.0.9",
+    "rimraf": "^2.2.8",
+    "sublevel": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^2.0.1"
+  }
+}
