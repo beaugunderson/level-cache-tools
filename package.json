@@ -1,6 +1,6 @@
 {
   "name": "level-cache-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cache tools backed by leveldb",
   "main": "level-cache-tools.js",
   "scripts": {
@@ -23,8 +23,7 @@
     "levelup": "^0.19.0",
     "lodash": "^2.4.1",
     "monotonic-timestamp": "0.0.9",
-    "rimraf": "^2.2.8",
-    "sublevel": "^2.4.0"
+    "rimraf": "^2.2.8"
   },
   "devDependencies": {
     "chai": "^1.9.2",
