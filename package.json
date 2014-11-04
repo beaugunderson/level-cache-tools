@@ -1,6 +1,6 @@
 {
   "name": "level-cache-tools",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Cache tools backed by leveldb",
   "main": "level-cache-tools.js",
   "scripts": {
