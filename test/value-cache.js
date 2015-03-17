@@ -5,6 +5,7 @@ require('chai').should();
 var path = require('path');
 var rimraf = require('rimraf');
 var ValueCache = require('..').ValueCache;
+var levelup = require('levelup');
 
 var PATH = path.join(__dirname, 'value-cache');
 
@@ -42,6 +43,23 @@ describe('ValueCache', function () {
           });
         });
       });
+    });
+  });
+
+  describe('Construct with db', function dbCtorSuite() {
+    var altCachePath = path.join(__dirname, 'alternative-cache');
+
+    before(function cleanUp() {
+      rimraf.sync(altCachePath);
+    });
+
+    it('should create a value cache using the DB.', function dbCtor() {
+      var db = levelup(path.join(__dirname, 'alternative-cache'));
+      var strings = new ValueCache(db);
+      strings.should.be.an('object');
+      strings.contains.should.be.a('function');
+      strings.put.should.be.a('function');
+      db.close();
     });
   });
 });

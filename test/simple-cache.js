@@ -4,6 +4,7 @@ require('chai').should();
 
 var path = require('path');
 var rimraf = require('rimraf');
+var levelup = require('levelup');
 
 var SimpleCache = require('..').SimpleCache;
 
@@ -31,6 +32,22 @@ describe('SimpleCache', function () {
 
         cb();
       });
+    });
+  });
+
+  describe('Construct with db', function dbCtorSuite() {
+    var altCachePath = path.join(__dirname, 'alternative-cache');
+
+    before(function cleanUp() {
+      rimraf.sync(altCachePath);
+    });
+
+    it('should create a cache using the provided DB.', function dbCtor() {
+      var db = levelup(altCachePath);
+      var dbCache = new SimpleCache(db);
+      dbCache.should.be.an('object');
+      dbCache.get.should.be.a('function');
+      dbCache.put.should.be.a('function');
     });
   });
 });
