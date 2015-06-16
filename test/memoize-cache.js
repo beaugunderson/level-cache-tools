@@ -4,6 +4,7 @@ var async = require('async');
 var path = require('path');
 var should = require('chai').should();
 var rimraf = require('rimraf');
+var levelup = require('levelup');
 
 var MemoizeCache = require('..').MemoizeCache;
 
@@ -46,4 +47,18 @@ describe('MemoizeCache', function () {
       });
     });
   });
+
+  describe('Construct with db', function dbCtorSuite() {
+    var altCachePath = path.join(__dirname, 'alternative-cache');
+
+    before(function cleanUp() {
+      rimraf.sync(altCachePath);
+    });
+
+    it('should create a memoized function using the DB.', function dbCtor() {
+      var db = levelup(path.join(__dirname, 'alternative-cache'));
+      var memoizedFn = new MemoizeCache(db, asyncFn);
+      memoizedFn.should.be.a('function');
+    });
+  });  
 });

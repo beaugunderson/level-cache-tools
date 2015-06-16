@@ -3,3 +3,4 @@ node_modules/
 test/memoize-cache/
 test/simple-cache/
 test/value-cache/
+test/alternative-cache/
