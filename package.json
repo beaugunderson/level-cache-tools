@@ -17,15 +17,15 @@
   },
   "homepage": "https://github.com/beaugunderson/node-level-cache-tools",
   "dependencies": {
-    "async": "^1.2.0",
-    "bytewise": "^1.0.0",
-    "leveldown": "^1.2.2",
-    "levelup": "^1.2.0",
+    "async": "^3.1.0",
+    "bytewise": "^1.1.0",
+    "leveldown": "^5.1.1",
+    "levelup": "^4.1.0",
     "monotonic-timestamp": "0.0.9"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^2.2.5",
-    "rimraf": "^2.3.4"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "rimraf": "^2.6.3"
   }
 }
